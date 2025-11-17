@@ -90,13 +90,13 @@ export default function Dashboard() {
     const { totalAmount, totalVAT, grandTotal } = getTotals()
     
     const data = entries.map(entry => ({
-      'S.No': entry.id,
-      'Description': entry.description,
-      'Amount': entry.amount,
-      'VAT (%)': vatRate,
-      'VAT Amount': calculateVAT(entry.amount).toFixed(2),
-      'Total': calculateTotal(entry.amount).toFixed(2)
-    }))
+  'S.No': String(entry.id),
+  'Description': entry.description,
+  'Amount': entry.amount.toFixed(2),
+  'VAT (%)': String(vatRate),
+  'VAT Amount': calculateVAT(entry.amount).toFixed(2),
+  'Total': calculateTotal(entry.amount).toFixed(2)
+}))
 
     
  type Row = {
