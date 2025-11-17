@@ -101,11 +101,9 @@ export default function Dashboard() {
     data.push({
   'S.No': null,
   'Description': 'TOTALS',
-  'Amount': totalAmount.toFixed(2),
-  'VAT (%)': '',
-  'VAT Amount': totalVAT.toFixed(2),
-  'Total': grandTotal.toFixed(2)
-})
+  'Amount': Number(totalAmount.toFixed(2)),
+  'VAT (%)': null,
+});
 
     const ws = XLSX.utils.json_to_sheet(data)
     const wb = XLSX.utils.book_new()
